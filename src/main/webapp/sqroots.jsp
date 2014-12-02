@@ -16,6 +16,8 @@
         String aStr = request.getParameter("a");
         String bStr = request.getParameter("b");
         String cStr = request.getParameter("c");
+
+        //File file = new File();
         if (aStr != null && bStr != null && cStr != null) {
             double a = Double.parseDouble(aStr);
             double b = Double.parseDouble(bStr);
@@ -27,7 +29,7 @@
 %> Решений: <%=x.length%> <%
     for (int i = 0; i < x.length; ++i) {
 %> x<sub><%=(i + 1)%>
-</sub> = <%=x%>
+</sub> = <%=x[i]%>
 <%
     }
 } catch (AnyXException e) {
@@ -56,7 +58,7 @@
     = 0
     <br>
     <br>
-    <input type="submit" value="Решить!"/>
+    <input type="submit" value="Решить!" name="Solve"/>
 </form>
 </body>
 </html>
