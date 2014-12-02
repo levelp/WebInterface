@@ -29,7 +29,7 @@
 %> Решений: <%=x.length%> <%
     for (int i = 0; i < x.length; ++i) {
 %> x<sub><%=(i + 1)%>
-</sub> = <%=x%>
+</sub> = <%=x[i]%>
 <%
     }
 } catch (AnyXException e) {
