@@ -22,7 +22,7 @@ package example;
             double d = (b * b) - (4 * a * c);
             if (d < 0) {
                 x1=0;
-                return new double []{x1};
+                return new double []{x1};//
 
             }
             if (d == 0) {

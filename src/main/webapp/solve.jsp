@@ -34,7 +34,7 @@
   <br>
   <input type="submit" value="Решить!"/>
 </form>
-<h2>Решение:</h2>
+<h2>Решение :</h2>
 
 <%
   String aStr = request.getParameter("a");
