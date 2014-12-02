@@ -9,14 +9,15 @@
 <h1>Квадратное уравнение</h1>
 
 <%
-    String aStr = request.getParameter("a");
-    String bStr = request.getParameter("b");
-    String cStr = request.getParameter("c");
-    if (aStr != null && bStr != null && cStr != null) {
-        double a = Double.parseDouble(aStr);
-        double b = Double.parseDouble(bStr);
-        double c = Double.parseDouble(cStr);
-        QuadraticEquation equation = new QuadraticEquation(a, b, c);
+    try {
+        String aStr = request.getParameter("a");
+        String bStr = request.getParameter("b");
+        String cStr = request.getParameter("c");
+        if (aStr != null && bStr != null && cStr != null) {
+            double a = Double.parseDouble(aStr);
+            double b = Double.parseDouble(bStr);
+            double c = Double.parseDouble(cStr);
+            QuadraticEquation equation = new QuadraticEquation(a, b, c);
 %> <%=a%> x<sup>2</sup> + <%=b%> x + <%=c%> = 0<br> <%
     try {
         double[] x = equation.solve();
@@ -29,6 +30,9 @@
 } catch (AnyXException e) {
 %> <%=e.getMessage()%> <%
         }
+    }
+} catch (NumberFormatException nfe) {
+%>  Введите число <%
     }
 %>
 
