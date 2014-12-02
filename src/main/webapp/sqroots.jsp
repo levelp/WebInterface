@@ -10,6 +10,9 @@
 
 <%
     try {
+        out = pageContext.getOut();
+        out.write("Строка в браузер");
+
         String aStr = request.getParameter("a");
         String bStr = request.getParameter("b");
         String cStr = request.getParameter("c");
