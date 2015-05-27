@@ -13,4 +13,7 @@ hs_err_pid*
 
 target
 classes
-.idea/workspace.xml
+
+# Idea project
+.idea
+*.iml

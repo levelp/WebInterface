@@ -7,6 +7,9 @@
     <groupId>levelp</groupId>
     <artifactId>WebInterface</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <!-- WebInterface-1.0-SNAPSHOT.war -->
+    <!-- WAR = WebArchive -->
+    <packaging>war</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
