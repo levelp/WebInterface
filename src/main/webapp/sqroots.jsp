@@ -1,18 +1,9 @@
 <%@ page import="example.QuadraticEquation" %>
 <%@ page import="example.exceptions.AnyXException" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Решение квадратного уравнения</title>
-</head>
-<body>
-<h1>Квадратное уравнение</h1>
 
 <%
     try {
-        out = pageContext.getOut();
-        out.write("Строка в браузер");
-
         String aStr = request.getParameter("a");
         String bStr = request.getParameter("b");
         String cStr = request.getParameter("c");
@@ -26,10 +17,23 @@
 %> <%=a%> x<sup>2</sup> + <%=b%> x + <%=c%> = 0<br> <%
     try {
         double[] x = equation.solve();
-%> Решений: <%=x.length%> <%
+%> <%="<span class='step'>1: </span>"%>D = <%=b%>^2 - 4 * <%=a%> * <%=c%> =
+<% double d = b*b - 4*a*c;
+    out.print(d);%>
+<br />
+<%
+    if(d > 0) {
+        out.println("<span class='step'>2: </span>x1 = (-b + D^(1/2))/(2 * a) <br />");
+        out.println("x2 = (-b - D^(1/2))/(2 * a) <br />");
+    } else if(d == 0) {
+        out.println("<span class='step'>2: </span>x = (-b + D^(1/2))/(2 * a) <br />");
+    }
+%>
+<p><span class="step">Итог:</span> Решений: <%=x.length%></p>
+<p><%
     for (int i = 0; i < x.length; ++i) {
 %> x<sub><%=(i + 1)%>
-</sub> = <%=x[i]%>
+</sub> = <%=x[i]%></p>
 <%
     }
 } catch (AnyXException e) {
@@ -37,28 +41,7 @@
         }
     }
 } catch (NumberFormatException nfe) {
-%>  Введите число <%
+%>   <%out.print(nfe.getMessage());
     }
 %>
 
-<h2>Форма для ввода коэффициентов</h2>
-
-<form action="sqroots.jsp" method="GET">
-    <label>
-        <input type="text" name="a" value="${param.a}">
-        x<sup>2</sup> +
-    </label>
-    <label>
-        <input type="text" name="b" value="${param.b}"/>
-    </label>
-    x +
-    <label>
-        <input type="text" name="c" value="${param.c}"/>
-    </label>
-    = 0
-    <br>
-    <br>
-    <input type="submit" value="Решить!" name="Solve"/>
-</form>
-</body>
-</html>

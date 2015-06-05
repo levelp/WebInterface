@@ -1,36 +1,32 @@
-<%@ page import="example.MyClass" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Начальная страница</title>
+    <title>Решение квадратного уравнения</title>
+    <script type="text/javascript" src="./script/equation.js">
+    </script>
+    <link rel="stylesheet" href="./style/equation.css" />
 </head>
 <body>
-<h1>Начальная страница</h1>
+<h1>Квадратное уравнение</h1>
 
-<%
-    MyClass myClass = new MyClass();
-%>
+<h2>Форма для ввода коэффициентов</h2>
 
-Дважды два: ${2 * 2}
+    <label>
+        <input type="text" size="2" id="a" >
+        x<sup>2</sup> +
+    </label>
+    <label>
+        <input type="text" size="2" id="b" />
+    </label>
+    x +
+    <label>
+        <input type="text" size="2" id="c" />
+    </label>
+    = 0
+    <br>
+    <br>
+    <input type="submit" value="Решить!" name="Solve" onclick="getAnswer()"/>
 
-<h2>Таблица умножения</h2>
-
-<table border="1">
-    <%
-        for (int i = 1; i < 10; i++) {
-    %>
-    <tr>
-        <%
-            for (int j = 1; j < 10; j++) {
-        %>
-        <td><%=myClass.mul(i, j)%>
-        </td>
-        <% } %>
-    </tr>
-    <%
-        }
-    %>
-</table>
-
+<div id="answer"></div>
 </body>
 </html>
