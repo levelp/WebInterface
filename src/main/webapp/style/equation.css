@@ -1,0 +1,15 @@
+body {
+    background-image: url(../res/math.jpg);
+    background-color: aliceblue;
+    text-align: center;
+}
+input {
+    font-size: 17px;
+}
+div {
+    font-size: 20px;
+}
+
+.step {
+    color: brown;
+}
