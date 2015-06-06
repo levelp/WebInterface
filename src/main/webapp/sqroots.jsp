@@ -30,10 +30,13 @@
     }
 %>
 <p><span class="step">Итог:</span> Решений: <%=x.length%></p>
-<p><%
+<div class="finish" <%if(x.length == 0) {
+    out.print("style='display: none;'");
+}%>><%
     for (int i = 0; i < x.length; ++i) {
 %> x<sub><%=(i + 1)%>
-</sub> = <%=x[i]%></p>
+</sub> = <%=x[i]%>
+    <br />
 <%
     }
 } catch (AnyXException e) {
@@ -44,4 +47,4 @@
 %>   <%out.print(nfe.getMessage());
     }
 %>
-
+</div>
