@@ -35,7 +35,7 @@
 }%>><%
     for (int i = 0; i < x.length; ++i) {
 %> x<sub><%=(i + 1)%>
-</sub> = <%=x[i]%>
+</sub> = <%out.print((new java.util.Formatter().format("%.2f", x[i])));%>
     <br />
 <%
     }
