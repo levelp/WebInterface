@@ -1,6 +1,6 @@
 function getAnswer() {
     var xmlhttp;
-    var sendlink = "/sqroots.jsp";
+    var sendlink = "./sqroots.jsp";
     if (window.XMLHttpRequest)
     {
         xmlhttp=new XMLHttpRequest();
