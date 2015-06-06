@@ -13,3 +13,13 @@ div {
 .step {
     color: brown;
 }
+
+.finish {
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
+    width: 200px;
+    max-width: 40%;
+    margin: 0px auto;
+    text-align: center;
+}
