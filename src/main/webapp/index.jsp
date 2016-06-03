@@ -4,28 +4,29 @@
     <title>Решение квадратного уравнения</title>
     <script type="text/javascript" src="./script/equation.js">
     </script>
-    <link rel="stylesheet" href="./style/equation.css" />
+    <link rel="stylesheet" href="./style/equation.css"/>
 </head>
 <body>
 <h1>Квадратное уравнение</h1>
 
 <h2>Форма для ввода коэффициентов</h2>
+<h3>Привет, группа! Давайте писать свой проект!</h3>
 
-    <label>
-        <input type="text" size="2" id="a" >
-        x<sup>2</sup> +
-    </label>
-    <label>
-        <input type="text" size="2" id="b" />
-    </label>
+<label>
+    <input type="text" size="2" id="a">
+    x<sup>2</sup> +
+</label>
+<label>
+    <input type="text" size="2" id="b"/>
     x +
-    <label>
-        <input type="text" size="2" id="c" />
-    </label>
+</label>
+<label>
+    <input type="text" size="2" id="c"/>
     = 0
-    <br>
-    <br>
-    <input type="submit" value="Решить!" name="Solve" onclick="getAnswer()"/>
+</label>
+<br>
+<br>
+<input type="submit" value="Решить!" name="Solve" onclick="getAnswer()"/>
 
 <div id="answer"></div>
 </body>

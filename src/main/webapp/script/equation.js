@@ -1,19 +1,16 @@
 function getAnswer() {
     var xmlhttp;
     var sendlink = "./sqroots.jsp";
-    if (window.XMLHttpRequest)
+    if (window.XMLHttpRequest) // Firefox / Chrome
     {
-        xmlhttp=new XMLHttpRequest();
+        xmlhttp = new XMLHttpRequest();
     }
-    else
-    {
-        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    else {    // Internet explorer
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
 
-    xmlhttp.onreadystatechange=function()
-    {
-        if (xmlhttp.readyState==4 && xmlhttp.status==200)
-        {
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             document.getElementById("answer").innerHTML = xmlhttp.responseText;
         }
     }
