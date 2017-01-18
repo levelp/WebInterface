@@ -22,10 +22,11 @@
     out.print(d);%>
 <br />
 <%
-    if(d > 0) {
-        out.println("<span class='step'>2: </span>x1 = (-b + D^(1/2))/(2 * a) <br />");
-        out.println("x2 = (-b - D^(1/2))/(2 * a) <br />");
-    } else if(d == 0) {
+    if (d > 0) { %>
+<span class='step'>2: </span>x1 = (-b + D^(1/2))/(2 * a) <br/>
+x2 = (-b - D^(1/2))/(2 * a) <br/>
+<%
+    } else if (d == 0) {
         out.println("<span class='step'>2: </span>x = (-b + D^(1/2))/(2 * a) <br />");
     }
 %>
